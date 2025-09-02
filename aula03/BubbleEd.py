@@ -1,5 +1,5 @@
 class Node:
-    def __inti_(self, number):
+    def __init__ (self, number):
         self.value = number
         self.next = None
 
