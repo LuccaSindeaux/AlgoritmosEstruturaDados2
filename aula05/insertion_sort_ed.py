@@ -29,32 +29,25 @@ class Lista:
             while atual is not None:
                 print(f"Valor: {atual.valor}")
                 atual = atual.proximo
-
-#head = [100] -> None / {13} / [200]
-#       [200] -> [100]/ {95} / [300]
-#       [300] -> [200]/ {119}/ [400]
-#       ...
-#       [1600] -> [1500]/{146}/None
-    def ordena_insertion(self): #13 95 119
-        #       13               95
+                
+    def ordena_insertion(self): 
         if self.head is None or self.head.proximo is None:
             return
 
-        atual = self.head.proximo # atual = [200]: proximo endereço de memória
-        while atual is not None: # enquanto o atual não for vazio, ou seja, enquanto o endereço de memória possuir um self.proximo
-            chave = atual.valor # 95 -> 119 -> 184 ...
-            mover = atual.anterior # [100]: endereço de memória
-                                    # checa 13 > 95 --> depois do primeiro loop
-            while mover is not None and mover.valor > chave: # enquanto mover não for nulo E valor de mover for maior que a chave 
+        atual = self.head.proximo 
+        while atual is not None: 
+            chave = atual.valor
+            mover = atual.anterior 
+            while mover is not None and mover.valor > chave: 
                 mover.proximo.valor = mover.valor # 
                 mover = mover.anterior
 
-            if mover is None: # se mover for None (na primeira ele será, pois ele é atual.anterior, que no primeiro caso, quando chave for 13, o mover será None)
-                self.head.valor = chave # head se torna a chave
+            if mover is None: 
+                self.head.valor = chave 
             else:
-                mover.proximo.valor = chave # se não: o próximo valor depois de "mover" é o valor da próxima chave: 95 no primeiro loop
+                mover.proximo.valor = chave
 
-            atual = atual.proximo # o atual será o próximo valor, neste caso, o 95 que em depois do 13
+            atual = atual.proximo
 
 lista_desordenada = [13, 95, 119, 184, 96, 102, 21]#, 48, 137, 57, 99, 5, 45, 170, 154, 146]
 lista = Lista()
