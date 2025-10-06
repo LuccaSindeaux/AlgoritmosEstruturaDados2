@@ -85,13 +85,23 @@ class Lista:
 
 
 dados_sorteios = [
-    {'concurso': 2683, 'numeros': [57, 1, 27, 47, 3, 23]},
-    {'concurso': 2667, 'numeros': [8, 4, 51, 46, 21, 1]},
-    {'concurso': 2700, 'numeros': [11, 28, 48, 1, 19, 20]},
-    {'concurso': 2675, 'numeros': [31, 1, 45, 26, 34, 42]}
+    {'concurso': 2785, 'numeros': [10, 22, 31, 40, 51, 58]},
+    {'concurso': 2784, 'numeros': [9, 15, 25, 29, 33, 48]},
+    {'concurso': 2783, 'numeros': [7, 18, 20, 26, 36, 59]},
+    {'concurso': 2782, 'numeros': [3, 11, 21, 23, 40, 52]},
+    {'concurso': 2781, 'numeros': [6, 16, 26, 32, 46, 55]},
+    {'concurso': 2780, 'numeros': [1, 2, 23, 30, 45, 54]},
+    {'concurso': 2779, 'numeros': [10, 19, 39, 41, 43, 57]},
+    {'concurso': 2778, 'numeros': [5, 25, 29, 30, 43, 47]},
+    {'concurso': 2777, 'numeros': [13, 22, 25, 27, 42, 47]},
+    {'concurso': 2776, 'numeros': [1, 10, 19, 23, 27, 49]},
+    {'concurso': 2775, 'numeros': [17, 26, 45, 46, 48, 53]},
+    {'concurso': 2774, 'numeros': [8, 18, 26, 27, 47, 50]},
+    {'concurso': 2773, 'numeros': [2, 17, 22, 42, 49, 52]},
+    {'concurso': 2772, 'numeros': [10, 11, 12, 19, 23, 47]},
 ]
 
-print("Números Sorteados. - Sorteio")
+print("Números Sorteados.  - Sorteio")
 
 for sorteio in dados_sorteios:
     lista_do_sorteio = Lista()

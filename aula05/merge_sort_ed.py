@@ -1,9 +1,8 @@
-import time
 class Node:
     def __init__(self, numero):
         self.valor = numero
-        self.next = None
-        self.prev = None
+        self.proximo = None
+        self.anterior = None
 
 class Lista:
     def __init__(self):
@@ -16,8 +15,8 @@ class Lista:
             self.head = novo_no
             self.tail = novo_no
         else:
-            self.tail.next = novo_no
-            novo_no.prev = self.tail
+            self.tail.proximo = novo_no
+            novo_no.anterior = self.tail
             self.tail = novo_no
 
     def imprime_lista(self):
@@ -27,22 +26,22 @@ class Lista:
             atual = self.head
             while atual is not None:
                 print(f"Valor: {atual.valor}")
-                atual = atual.next
+                atual = atual.proximo
 
     def ordena_merge(self):
         self.head = self._merge_sort(self.head)
         # Atualiza tail após ordenação
         atual = self.head
-        prev = None
+        anterior = None
         while atual:
-            atual.prev = prev
-            prev = atual
-            if atual.next is None:
+            atual.anterior = anterior
+            anterior = atual
+            if atual.proximo is None:
                 self.tail = atual
-            atual = atual.next
+            atual = atual.proximo
 
     def _merge_sort(self, head):
-        if head is None or head.next is None:
+        if head is None or head.proximo is None:
             return head
 
         meio = self._divide(head)
@@ -55,14 +54,14 @@ class Lista:
         lento = head
         rapido = head
 
-        while rapido.next and rapido.next.next:
-            lento = lento.next
-            rapido = rapido.next.next
+        while rapido.proximo and rapido.proximo.proximo:
+            lento = lento.proximo
+            rapido = rapido.proximo.proximo
 
-        meio = lento.next
-        lento.next = None
+        meio = lento.proximo
+        lento.proximo = None
         if meio:
-            meio.prev = None
+            meio.anterior = None
         return meio
 
     def _merge(self, esquerda, direita):
@@ -73,16 +72,16 @@ class Lista:
 
         if esquerda.valor <= direita.valor:
             resultado = esquerda
-            resultado.next = self._merge(esquerda.next, direita)
-            if resultado.next:
-                resultado.next.prev = resultado
+            resultado.proximo = self._merge(esquerda.proximo, direita)
+            if resultado.proximo:
+                resultado.proximo.anterior = resultado
         else:
             resultado = direita
-            resultado.next = self._merge(esquerda, direita.next)
-            if resultado.next:
-                resultado.next.prev = resultado
+            resultado.proximo = self._merge(esquerda, direita.proximo)
+            if resultado.proximo:
+                resultado.proximo.anterior = resultado
 
-        resultado.prev = None
+        resultado.anterior = None
         return resultado
 
 
