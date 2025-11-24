@@ -157,7 +157,7 @@ class ArvoreAVL:
 #################################
 
 def popular_arvore(arvore):
-    lista_entradas = [100, 50, 20] #[100, 50, 80, 200, 300, 60, 90, 250, 55]
+    lista_entradas = [100, 50, 20, 80, 90, 85] #[100, 50, 80, 200, 300, 60, 90, 250, 55]
     for e in lista_entradas:
         arvore.imprimir()
         arvore.adicionar_no(e)
