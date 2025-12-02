@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-#atividade de adicionar função de remover: linha 76 a 170.
-=======
->>>>>>> 49f310817c2e67891fb7186ccb8100409f0db2cb
 class No:
     def __init__(self, valor):
         self.esquerda = None
@@ -74,7 +70,6 @@ class ArvoreAVL:
                 return self._rotacao_esquerda(no_atual)
 
         return no_atual
-<<<<<<< HEAD
     
     # --- Métodos Adicionados para Remoção ---
 
@@ -173,8 +168,6 @@ class ArvoreAVL:
         while atual.esquerda is not None:
             atual = atual.esquerda
         return atual
-=======
->>>>>>> 49f310817c2e67891fb7186ccb8100409f0db2cb
 
     def _altura(self, no):
         if not no:
@@ -262,17 +255,16 @@ class ArvoreAVL:
 #################################
 
 def popular_arvore(arvore):
-<<<<<<< HEAD
+
     lista_entradas = [100, 50, 20, 80, 90] #[100, 50, 80, 200, 300, 60, 90, 250, 55]
-=======
-    lista_entradas = [100, 50, 20, 80, 90, 85] #[100, 50, 80, 200, 300, 60, 90, 250, 55]
->>>>>>> 49f310817c2e67891fb7186ccb8100409f0db2cb
+
     for e in lista_entradas:
         arvore.imprimir()
         arvore.adicionar_no(e)
 
     print("\nÁrvore completa")
     arvore.imprimir()
+    arvore.remover_no(90)
 
 
 
@@ -283,5 +275,6 @@ arvore = ArvoreAVL()
 # Adicionando nós na árvore
 #adicionar_ramo(arvore)
 popular_arvore(arvore)
+#remover_no(90)
 
 
